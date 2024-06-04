@@ -1,0 +1,81 @@
+:root {
+    /*Height is required to limit items,
+    it need to be close to the size of items,
+    you can use margin bottom on items to hide them */
+    --legend-height: 22px;
+}
+
+body {
+    counter-reset: items_count;
+}
+
+.legend {
+    position: relative;
+    height: var(--legend-height);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    /* The background shouldn't be transparent, if parent element has bg,
+    the bg of legend can be inherit */
+    background-color: white;
+}
+
+.legend-hover:hover {
+    position: absolute;
+    height: fit-content;
+    right: 0;
+    top: 0
+}
+
+
+.hide-box {
+    display: none;
+}
+
+.legend-hover:hover + .legend-placeholder {
+    /* legend-placeholder replace legend when it is position absolute */
+    height: var(--legend-height);
+}
+
+.legend-wrapper {
+    position: relative; /* can be also initial */
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    position: initial;
+    /*important overflow of container should be visible */
+}
+
+/*styling*/
+
+.container {
+    border-radius: 10px;
+    border: 1px solid grey;
+    padding: 10px;
+}
+
+.item-count-box {
+    border: 1px solid grey;
+    padding: 1px;
+}
+
+.legend {
+    border-radius: 2px;
+    transition: height 0.3s, box-shadow 0.3s, top 0.3s;
+}
+
+.legend-hover:hover {
+    box-shadow: 0 0 10px black;
+}
+
+.box {
+    border: 1px solid grey;
+    margin-right: 5px;
+    border-radius: 2px;
+    padding: 1px;
+}
