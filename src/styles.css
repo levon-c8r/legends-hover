@@ -5,6 +5,10 @@
     --legend-height: 22px;
 }
 
+.box {
+    margin-bottom: 3px;
+}
+
 body {
     counter-reset: items_count;
 }
